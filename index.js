@@ -53,8 +53,9 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			//----Test HandY
+			sendTextMessage(sender, "ying Processing..." + fntext) 
 			var exec = require('child_process').exec, child;
-			
+			xxxx
 			child = exec('/usr/bin/java -jar ~/TunTREND_M1_SentimentCurrent.jar fntext' ,
 			  function (error, stdout, stderr){
 			    console.log('stdout: ' + stdout);
@@ -65,7 +66,7 @@ app.post('/webhook/', function (req, res) {
 			      sendTextMessage(sender, error) 
 			    }
 			});
-			sendTextMessage(sender, "ying Processing..." + fntext) 
+			
 			sendTextMessage(sender, "ying End.") 
 			//sendImg(sender)
 			//-----End Test Handy
