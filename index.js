@@ -46,6 +46,7 @@ app.post('/webhook/', function (req, res) {
 		let sender = event.sender.id
 		if (event.message && event.message.text) {
 			let text = event.message.text
+			let fntext = text.substring(0, 200) 
 			if (text === 'Generic'){ 
 				console.log("welcome to chatbot")
 				//sendGenericMessage(sender)
@@ -53,7 +54,7 @@ app.post('/webhook/', function (req, res) {
 			}
 			//----Test HandY
 			var exec = require('child_process').exec, child;
-			child = exec('/usr/bin/java -jar ~/TunTREND_M1_SentimentCurrent.jar text.substring(0, 200)',
+			child = exec('/usr/bin/java -jar ~/TunTREND_M1_SentimentCurrent.jar fntext',
 			  function (error, stdout, stderr){
 			    console.log('stdout: ' + stdout);
 			    console.log('stderr: ' + stderr);
