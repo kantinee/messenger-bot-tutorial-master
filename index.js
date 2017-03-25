@@ -59,7 +59,7 @@ app.post('/webhook/', function (req, res) {
 			//child.on('exit', function() {
 			//  process.exit()
 			//})
-			child = exec('/usr/bin/java -jar ~/TunTREND_M1_SentimentCurrent4.jar ' + fntext ,
+			child = exec('/usr/bin/java -jar ~/TunTREND_M1_SentimentCurrent5.jar ' + fntext ,
 			  function (error, stdout, stderr){
 			    console.log('stdout: ' + stdout);
 			    console.log('stderr: ' + stderr);
@@ -72,7 +72,7 @@ app.post('/webhook/', function (req, res) {
 			
 			sendTextMessage(sender, "ying End.") 
 			var absolute_path = __dirname;
-			sendTextMessage(sender, absolute_path) 
+			sendTextMessage(sender, path.dirname(require.main.filename)) 
 			//sendImg(sender)
 			//-----End Test Handy
 			
