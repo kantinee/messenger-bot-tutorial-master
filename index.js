@@ -40,6 +40,10 @@ app.get('/webhook/', function (req, res) {
 
 // to post data
 app.post('/webhook/', function (req, res) {
+	//ying
+
+	if (data.object == 'page') {
+	   
 	let messaging_events = req.body.entry[0].messaging
 	for (let i = 0; i < messaging_events.length; i++) {
 		let event = req.body.entry[0].messaging[i]
@@ -53,8 +57,9 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			//----Test HandY
-			sendTextMessage(sender, "ying Processing..." + fntext) 
+			
 			var exec = require('child_process').exec, child;
+			sendTextMessage(sender, "ying Processing..." + fntext) 
 			//child.stdout.pipe(process.stdout)
 			//child.on('exit', function() {
 			//  process.exit()
@@ -69,10 +74,9 @@ app.post('/webhook/', function (req, res) {
 			      sendTextMessage(sender, error) 
 			    }
 			});
-			
 			sendTextMessage(sender, "ying End.") 
-			var absolute_path = __dirname;
-			sendTextMessage(sender, path.dirname(require.main.filename)) 
+			//var absolute_path = __dirname;
+			//sendTextMessage(sender, path.dirname(require.main.filename)) 
 			//sendImg(sender)
 			//-----End Test Handy
 			
@@ -87,7 +91,7 @@ app.post('/webhook/', function (req, res) {
 		}
 	}
 	res.sendStatus(200)
-})
+}})
 
 
 // recommended to inject access tokens as environmental variables, e.g.
