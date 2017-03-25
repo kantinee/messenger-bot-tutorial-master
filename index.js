@@ -57,11 +57,12 @@ app.post('/webhook/', function (req, res) {
 			//----Test HandY
 			
 			var exec = require('child_process').exec, child;
-			sendTextMessage(sender, "ying Processing..." + fntext) 
-			child.stdout.pipe(process.stdout)
-			child.on('exit', function() {
-			process.exit()
-			})
+			sendTextMessage(sender, "Processing..." + fntext)
+			sendImg(sender,"https://www.google.co.th/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png")
+			//child.stdout.pipe(process.stdout)
+			//child.on('exit', function() {
+			//process.exit()
+			//})
 			child = exec('/usr/bin/java -jar ~/TunTREND_M1_SentimentCurrent11 ' + fntext ,
 			  function (error, stdout, stderr){
 			    console.log('stdout: ' + stdout);
@@ -72,7 +73,7 @@ app.post('/webhook/', function (req, res) {
 			      sendTextMessage(sender, error) 
 			    }
 			});
-			sendTextMessage(sender, "ying End.") 
+			//sendTextMessage(sender, "ying End.") 
 			//var absolute_path = __dirname;
 			//sendTextMessage(sender, path.dirname(require.main.filename)) 
 			//sendImg(sender)
@@ -121,7 +122,7 @@ function sendImg(sender,xurl) {
 	let messageData = {
 		"attachment": {
 			"type": "image",
-			"payload": {"url": "https://www.google.co.th/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"}
+			"payload": {"url": xurl}
 	}}
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
