@@ -1,0 +1,27 @@
+{
+  "name": "secretbots",
+  "version": "1.0.0",
+  "description": "![Alt text](/demo/Demo.gif)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "handy",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "request": "^2.81.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kantinee/messenger-bot-tutorial-master.git"
+  },
+  "keywords": [
+    "ying2003"
+  ],
+  "bugs": {
+    "url": "https://github.com/kantinee/messenger-bot-tutorial-master/issues"
+  },
+  "homepage": "https://github.com/kantinee/messenger-bot-tutorial-master#readme"
+}
