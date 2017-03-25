@@ -103,7 +103,31 @@ function sendTextMessage(sender, text) {
 		}
 	})
 }
+//Handy
+function sendImg(sender) {
+	let messageData = {
+		"attachment": {
+			"type": "image",
+			"payload": {"url": "https://www.google.co.th/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"}
+	}}
+	request({
+		url: 'https://graph.facebook.com/v2.6/me/messages',
+		qs: {access_token:token},
+		method: 'POST',
+		json: {
+			recipient: {id:sender},
+			message: messageData,
+		}
+	}, function(error, response, body) {
+		if (error) {
+			console.log('Error sending messages: ', error)
+		} else if (response.body.error) {
+			console.log('Error: ', response.body.error)
+		}
+	})
+}
 
+//end handy
 
 function sendGenericMessage(sender) {
 	let messageData = {
