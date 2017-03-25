@@ -64,7 +64,7 @@ app.post('/webhook/', function (req, res) {
 			    }
 			});
 			sendTextMessage(sender, "Call End") 
-			sendImg(sender,"~/data/sentiment_current.png")
+			sendImg(sender)
 			//-----End Test Handy
 			
 			//xhistory = xhistory + text.substring(0, 200)
@@ -110,7 +110,7 @@ function sendImg(sender,xurl) {
 	let messageData = {
 		"attachment": {
 			"type": "image",
-			"payload": {"url": xurl}
+			"payload": {"url": "~/data/sentiment_current.png"}
 	}}
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
