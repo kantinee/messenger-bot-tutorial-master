@@ -62,7 +62,7 @@ app.post('/webhook/', function (req, res) {
 			//child.on('exit', function() {
 			//  process.exit()
 			//})
-			child = exec('/usr/bin/java -jar ~/TunTREND_M4_DailyTrends2.jar'  ,
+			child = exec('/usr/bin/java -jar ~/TunTREND_M4_DailyTrends3.jar'  ,
 			  function (error, stdout, stderr){
 			    console.log('stdout: ' + stdout);
 			    console.log('stderr: ' + stderr);
