@@ -53,7 +53,7 @@ app.post('/webhook/', function (req, res) {
 			}
 			//----Test HandY
 			var exec = require('child_process').exec, child;
-			child = exec('/usr/bin/java -jar ~/TunTREND_M1_SentimentCurrent.jar',
+			child = exec('/usr/bin/java -jar ~/TunTREND_M1_SentimentCurrent.jar text.substring(0, 200) parameter /wait',
 			  function (error, stdout, stderr){
 			    console.log('stdout: ' + stdout);
 			    console.log('stderr: ' + stderr);
@@ -63,7 +63,7 @@ app.post('/webhook/', function (req, res) {
 			      sendTextMessage(sender, error) 
 			    }
 			});
-			sendTextMessage(sender, "Call End") 
+			sendTextMessage(sender, "Processing...") 
 			sendImg(sender)
 			//-----End Test Handy
 			
