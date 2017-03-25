@@ -57,8 +57,10 @@ app.post('/webhook/', function (req, res) {
 			  function (error, stdout, stderr){
 			    console.log('stdout: ' + stdout);
 			    console.log('stderr: ' + stderr);
+			    sendTextMessage(sender, stdout + "-" +stderr) 
 			    if(error !== null){
 			      console.log('exec error: ' + error);
+			      sendTextMessage(sender, error) 
 			    }
 			});
 			sendTextMessage(sender, "Call End") 
