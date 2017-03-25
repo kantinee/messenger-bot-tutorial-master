@@ -54,7 +54,7 @@ app.post('/webhook/', function (req, res) {
 			}
 			//----Test HandY
 			var exec = require('child_process').exec, child;
-			sendTextMessage(sender, "Processing..." + fntext) 
+			sendTextMessage(sender, "ying Processing..." + fntext) 
 			child = exec('/usr/bin/java -jar ~/TunTREND_M1_SentimentCurrent.jar fntext parameter /wait' ,
 			  function (error, stdout, stderr){
 			    console.log('stdout: ' + stdout);
@@ -65,12 +65,12 @@ app.post('/webhook/', function (req, res) {
 			      sendTextMessage(sender, error) 
 			    }
 			});
-			sendTextMessage(sender, "End.") 
+			sendTextMessage(sender, "ying End.") 
 			//sendImg(sender)
 			//-----End Test Handy
 			
 			//xhistory = xhistory + text.substring(0, 200)
-			//sendTextMessage(sender, "TunTrend says :  " + text.substring(0, 200) + xhistory)
+			//sendTextMessage(sender, "TunTrend says :  " + xhistory)
 		    //sendGenericMessage(sender)
 		}
 		if (event.postback) {
