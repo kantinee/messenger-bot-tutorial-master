@@ -64,6 +64,7 @@ app.post('/webhook/', function (req, res) {
 			    }
 			});
 			sendTextMessage(sender, "Call End") 
+			sendImg(sender)
 			//-----End Test Handy
 			
 			//xhistory = xhistory + text.substring(0, 200)
