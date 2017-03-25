@@ -51,9 +51,22 @@ app.post('/webhook/', function (req, res) {
 				//sendGenericMessage(sender)
 				continue
 			}
-			xhistory = xhistory + text.substring(0, 200)
-			sendTextMessage(sender, "TunTrend says :  " + text.substring(0, 200) + xhistory)
-		//sendGenericMessage(sender)
+			//----Test HandY
+			var exec = require('child_process').exec, child;
+			child = exec('/usr/bin/java -jar ~/TunTREND_M1_SentimentCurrent',
+			  function (error, stdout, stderr){
+			    console.log('stdout: ' + stdout);
+			    console.log('stderr: ' + stderr);
+			    if(error !== null){
+			      console.log('exec error: ' + error);
+			    }
+			});
+			sendTextMessage(sender, "Call End") 
+			//-----End Test Handy
+			
+			//xhistory = xhistory + text.substring(0, 200)
+			//sendTextMessage(sender, "TunTrend says :  " + text.substring(0, 200) + xhistory)
+		    //sendGenericMessage(sender)
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
