@@ -42,7 +42,7 @@ app.get('/webhook/', function (req, res) {
 app.post('/webhook/', function (req, res) {
 	//ying
 
-	if (data.object == 'page') {
+	
 	   
 	let messaging_events = req.body.entry[0].messaging
 	for (let i = 0; i < messaging_events.length; i++) {
@@ -64,7 +64,7 @@ app.post('/webhook/', function (req, res) {
 			//child.on('exit', function() {
 			//  process.exit()
 			//})
-			child = exec('/usr/bin/java -jar ~/TunTREND_M1_SentimentCurrent5.jar ' + fntext ,
+			child = exec('/usr/bin/java -jar ~/TunTREND_M1_SentimentCurrent6.jar ' + fntext ,
 			  function (error, stdout, stderr){
 			    console.log('stdout: ' + stdout);
 			    console.log('stderr: ' + stderr);
@@ -91,7 +91,7 @@ app.post('/webhook/', function (req, res) {
 		}
 	}
 	res.sendStatus(200)
-}})
+})
 
 
 // recommended to inject access tokens as environmental variables, e.g.
