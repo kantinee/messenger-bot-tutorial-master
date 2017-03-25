@@ -41,9 +41,7 @@ app.get('/webhook/', function (req, res) {
 // to post data
 app.post('/webhook/', function (req, res) {
 	//ying
-
-	
-	   
+  
 	let messaging_events = req.body.entry[0].messaging
 	for (let i = 0; i < messaging_events.length; i++) {
 		let event = req.body.entry[0].messaging[i]
@@ -64,7 +62,7 @@ app.post('/webhook/', function (req, res) {
 			//child.on('exit', function() {
 			//  process.exit()
 			//})
-			child = exec('/usr/bin/java -jar ~/TunTREND_M1_SentimentCurrent7.jar ' + fntext ,
+			child = exec('/usr/bin/java -jar ~/TunTREND_M1_SentimentCurrent.jar ' + fntext ,
 			  function (error, stdout, stderr){
 			    console.log('stdout: ' + stdout);
 			    console.log('stderr: ' + stderr);
