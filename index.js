@@ -55,7 +55,7 @@ app.post('/webhook/', function (req, res) {
 			//----Test HandY
 			var exec = require('child_process').exec, child;
 			sendTextMessage(sender, "Processing..." + fntext) 
-			child = exec('/usr/bin/java -jar ~/TunTREND_M1_SentimentCurrent.jar fntext',
+			child = exec('/usr/bin/java -jar ~/TunTREND_M1_SentimentCurrent.jar fntext parameter /wait' ,
 			  function (error, stdout, stderr){
 			    console.log('stdout: ' + stdout);
 			    console.log('stderr: ' + stderr);
