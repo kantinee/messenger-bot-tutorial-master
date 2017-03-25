@@ -58,7 +58,7 @@ app.post('/webhook/', function (req, res) {
 			
 			var exec = require('child_process').exec, child;
 			sendTextMessage(sender, "Processing..." + fntext)
-			sendImg(sender, require('url') )
+			sendImg(sender, "https://drive.google.com/open?id=0BzrnMZPjyD_wb2N5bGU4Q2p3aFk" )
 			//child.stdout.pipe(process.stdout)
 			//child.on('exit', function() {
 			//process.exit()
