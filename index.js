@@ -14,6 +14,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const request = require('request')
 const app = express()
+let xhistory  =""
 
 app.set('port', (process.env.PORT || 5000))
 
@@ -50,7 +51,8 @@ app.post('/webhook/', function (req, res) {
 				//sendGenericMessage(sender)
 				continue
 			}
-			sendTextMessage(sender, "TunTrend says :  " + text.substring(0, 200))
+			xhistory = xhistory + text.substring(0, 200)
+			sendTextMessage(sender, "TunTrend says :  " + text.substring(0, 200) + xhistory)
 		//sendGenericMessage(sender)
 		}
 		if (event.postback) {
