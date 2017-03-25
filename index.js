@@ -110,7 +110,7 @@ function sendImg(sender,xurl) {
 	let messageData = {
 		"attachment": {
 			"type": "image",
-			"payload": {"url": "~/data/sentiment_current.png"}
+			"payload": {"url": "https://www.google.co.th/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"}
 	}}
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
