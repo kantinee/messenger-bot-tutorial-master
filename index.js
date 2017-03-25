@@ -51,7 +51,7 @@ app.post('/webhook/', function (req, res) {
 				continue
 			}
 			sendTextMessage(sender, "TunTrend says :  " + text.substring(0, 200))
-		sendGenericMessage(sender)
+		//sendGenericMessage(sender)
 		}
 		if (event.postback) {
 			let text = JSON.stringify(event.postback)
