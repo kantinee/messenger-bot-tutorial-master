@@ -64,7 +64,7 @@ app.post('/webhook/', function (req, res) {
 			    }
 			});
 			sendTextMessage(sender, "Call End") 
-			sendImg(sender)
+			sendImg(sender,"~/data/sentiment_current.png")
 			//-----End Test Handy
 			
 			//xhistory = xhistory + text.substring(0, 200)
@@ -105,11 +105,12 @@ function sendTextMessage(sender, text) {
 	})
 }
 //Handy
-function sendImg(sender) {
+function sendImg(sender,xurl) {
+	
 	let messageData = {
 		"attachment": {
 			"type": "image",
-			"payload": {"url": "https://www.google.co.th/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png"}
+			"payload": {"url": xurl}
 	}}
 	request({
 		url: 'https://graph.facebook.com/v2.6/me/messages',
