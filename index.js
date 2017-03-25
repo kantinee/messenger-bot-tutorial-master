@@ -58,11 +58,11 @@ app.post('/webhook/', function (req, res) {
 			
 			var exec = require('child_process').exec, child;
 			sendTextMessage(sender, "ying Processing..." + fntext) 
-			//child.stdout.pipe(process.stdout)
-			//child.on('exit', function() {
-			//  process.exit()
-			//})
-			child = exec('/usr/bin/java -jar ~/TunTREND_M2_SentimentByMonth1.jar ' + fntext,
+			child.stdout.pipe(process.stdout)
+			child.on('exit', function() {
+			process.exit()
+			})
+			child = exec('/usr/bin/java -jar ~/TunTREND_M1_SentimentCurrent11 ' + fntext ,
 			  function (error, stdout, stderr){
 			    console.log('stdout: ' + stdout);
 			    console.log('stderr: ' + stderr);
