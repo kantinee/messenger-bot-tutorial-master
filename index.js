@@ -58,7 +58,7 @@ app.post('/webhook/', function (req, res) {
 			
 			var exec = require('child_process').exec, child;
 			sendTextMessage(sender, "Processing..." + fntext)
-			sendImg(sender,"https://www.google.co.th/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png")
+			sendImg(sender,"./data/sentiment_current.png")
 			//child.stdout.pipe(process.stdout)
 			//child.on('exit', function() {
 			//process.exit()
