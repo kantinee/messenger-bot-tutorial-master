@@ -58,7 +58,7 @@ app.post('/webhook/', function (req, res) {
 			
 			var exec = require('child_process').exec, child;
 			sendTextMessage(sender, "Processing..." + fntext)
-			sendImg(sender,"./data/sentiment_current.png")
+			sendImg(sender,window.location.href )
 			//child.stdout.pipe(process.stdout)
 			//child.on('exit', function() {
 			//process.exit()
