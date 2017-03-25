@@ -53,11 +53,11 @@ app.post('/webhook/', function (req, res) {
 			}
 			//----Test HandY
 			var exec = require('child_process').exec, child;
-			child = exec('/usr/bin/java -jar TunTREND_M1_SentimentCurrent',
+			child = exec('/usr/bin/java -jar ~/app/TunTREND_M1_SentimentCurrent',
 			  function (error, stdout, stderr){
 			    console.log('stdout: ' + stdout);
 			    console.log('stderr: ' + stderr);
-			    sendTextMessage(sender, stdout + "-" +stderr) 
+			    sendTextMessage(sender, stdout + "-" + stderr) 
 			    if(error !== null){
 			      console.log('exec error: ' + error);
 			      sendTextMessage(sender, error) 
